@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  min-height: 70px;
+  background-color: #242526;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.navBar {
+  width: 1200px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.media {
+  position: absolute;
+  display: none;
+  bottom: 50px;
+  color: #fff;
+  place-self: center;
+}
+
+.media-social {
+  display: flex;
+  gap: 30px;
+}
+
+.media .media-link {
+  position: relative;
+  bottom: 40px;
+  justify-content: center;
+}
+
+.my-logo {
+  font-size: 30px;
+  font-weight: 600;
+  color: #ffc300;
+}
+
+.navMenu {
+  display: flex;
+  gap: 30px;
+}
+
+li a {
+  font-size: 19px;
+  color: #fff;
+}
+
+.hamburger {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.hamburger .bar,
+.hamburger::after,
+.hamburger::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  margin: 6px 0px;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.hamburger.active::before {
+  transform: rotate(-45deg) translate(-9px, 5px);
+}
+
+.hamburger.active::after {
+  transform: rotate(45deg) translate(-9px, -6px);
+}
+
+.hamburger.active .bar {
+  opacity: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+align-items: center;
+justify-content: center;
+  text-align: center;
+  background-image: url(image/mountain.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content-bg {
+  width: 1200px;
+  height: 400px;
+  place-content: center;
+  background-color: #264653;
+  color: #ffc300;
+  opacity: 0.5;
+  border-radius: 5px;
+}
+
+.content-bg h1 {
+  font-size: 40px;
+  font-style: italic;
+  position: relative;
+  bottom: 15px;
+  color: #fff;
+}
+
+.content-bg p {
+  font-size: 19px;
+}
+
+.scrollTop {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #242526;
+  font-size: 22px;
+  padding: 12px 15px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.5s ease, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hamburger {
+  display: none;
+}
+
+.section {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto;
+  text-align: left;
+  row-gap: 3rem;
+}
+
+.content-text h2 {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.content-text p {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.line-center {
+  width: 650px;
+  display: flex;
+  border: 1px solid #dfe2e7;
+  border-radius: 5px;
+  outline: none;
+}
+
+.copyright {
+  margin-top: auto;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  place-self: center;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.copyright-text {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 35px;
+}
+
+.line-bottom {
+  width: 100%;
+  border: 1px solid #dfe2e7;
+  outline: none;
+}
+
+.social-media {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  color: #264653;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .navBar {
+    padding: 0 20px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navBar {
+    padding: 0 20px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navMenu {
+    position: fixed;
+    height: 100vh;
+    line-height: 90px;
+    right: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #242526;
+    width: 100%;
+    text-align: center;
+    transition: 0.5s;
+    border-top: 1px solid #ffc300;
+    z-index: 999;
+  }
+
+  .navMenu.active {
+    right: 0;
+  }
+
+  .media {
+    display: block;
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .section {
+    width: 100%;
+    padding: 0 30px;
+    display: block;
+  }
+
+  .line-center {
+    width: 100%;
+    margin: 2rem auto;
+  }
+}
